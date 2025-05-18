@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray">
+
+    <!-- Scrollable content (Account settings) -->
+    <ScrollView
+        android:id="@+id/accountScroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_account"
+                android:background="@drawable/bg_circle"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/etUsername"
+                android:minHeight="48dp"
+                android:autofillHints="username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:inputType="textPersonName"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:minHeight="48dp"
+                android:autofillHints="emailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="8dp"/>
+
+            <EditText
+                android:id="@+id/etDefaultIncome"
+                android:minHeight="48dp"
+                android:autofillHints="username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Default Income"
+                android:inputType="numberDecimal"
+                android:layout_marginTop="8dp" />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save Changes"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Floating Add Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddCategory"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/burgundy"
+        app:tint="@android:color/white"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        android:contentDescription="@string/add_category"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottomNavBar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="#FFFACD"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Records -->
+        <LinearLayout
+            android:id="@+id/navRecords"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/iconRecords"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:alpha="0.5"
+                android:src="@drawable/ic_archive"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Records"
+                android:textSize="12sp"
+                android:textColor="#000"/>
+        </LinearLayout>
+
+        <!-- Budget -->
+        <LinearLayout
+            android:id="@+id/navBudget"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/iconBudget"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:alpha="0.5"
+                android:src="@drawable/ic_budget"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Budget"
+                android:textSize="12sp"
+                android:textColor="#000"/>
+        </LinearLayout>
+
+        <!-- Spacer -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <!-- Analysis -->
+        <LinearLayout
+            android:id="@+id/navAnalysis"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/iconAnalysis"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:alpha="0.5"
+                android:src="@drawable/ic_pie"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Analysis"
+                android:textSize="12sp"
+                android:textColor="#000"/>
+        </LinearLayout>
+
+        <!-- Account -->
+        <LinearLayout
+            android:id="@+id/navAccount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/iconAccount"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:alpha="0.5"
+                android:src="@drawable/ic_account"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account"
+                android:textSize="12sp"
+                android:textColor="#000"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
